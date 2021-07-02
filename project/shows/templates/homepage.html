@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+	<link rel="stylesheet" type="text/css" href="{'% static '/css/cal.css' %}">
+    <style>
+		ul {
+			background-color: #FFDAB9;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+		li {
+			float: left;
+			border-right: solid 1px white;
+		}
+		li:last-child { border-right: none; }
+		li a {
+			display: block;
+			background-color: #FFDAB9;
+			color: #000000;
+			padding: 8px;
+			text-decoration: none;
+			text-align: center;
+			font-weight: bold;
+		}
+		li a.current {
+			background-color: #FF6347;
+			color: white;
+		}
+		li a:hover:not(.current) {
+			background-color: #CD853F;
+			color: white;
+		}
+	</style>
+    <title>SGCC_3</title>
+</head>
+<body>
+    <ul>
+		<li><a href="/">HOMEPAGE</a></li>
+		<li><a href="/">콘서트</a></li>
+		<li><a href="/">전시</a></li>
+        <li><a href="/">뮤지컬</a></li>
+		<li><a href="/">연극</a></li>
+		<ul style="float:right; list-style-type:none;">
+			<li><a href="/">로그인</a></li>
+			<li><a href="/">회원가입</a></li>
+		</ul>
+	</ul>
+
+	<div class="concert_box">
+		Concert Rank<br>
+		{% for concert in concerts %}
+		{{ forloop.counter }}. {{concert.title}}    {{concert.likes}}<br>
+		{% endfor %}
+	</div>
+<br><br>
+
+	<div class="exhibit_box">
+		Exhibit Rank<br>
+		{% for exhibit in exhibits %}
+		{{ forloop.counter }}. {{exhibit.title}}    {{exhibit.likes}}<br>
+		{% endfor %}
+	</div>
+<br><br>
+	<div class="musical_box">
+		Musical Rank<br>
+		{% for musical in musicals %}
+		{{ forloop.counter }}. {{musical.title}}    {{musical.likes}}<br>
+		{% endfor %}
+	</div>
+<br><br>
+
+	<div class="play_box">
+		Play Rank<br>
+		{% for play in plays %}
+		{{ forloop.counter }}. {{play.title}}    {{play.likes}}<br>
+		{% endfor %}
+	</div>
+<br><br>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+
+</body>
+</html>

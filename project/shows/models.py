@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
@@ -16,6 +18,7 @@ class Show(models.Model):
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     startDate = models.DateTimeField()
     endDate = models.DateTimeField()
+    startTime = models.DateTimeField(default=datetime.today())
     runningTime = models.IntegerField()
     actors = models.TextField()
     directors = models.TextField()
@@ -33,4 +36,3 @@ class Reviews(models.Model):
 
     def __str__(self):
         return self.title
-
